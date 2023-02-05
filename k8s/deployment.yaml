@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-t-back-end
+spec:
+  template:
+    metadata:
+      name: pod-t-back-end
+      labels:
+        app: t-back-end
+    spec:
+      containers:
+        - name: t-back-end-container
+          image: acmlira/t-back-end:dev
+          imagePullPolicy: "IfNotPresent"
+          envFrom:
+            - configMapRef:
+                name: configmap-t-back-end
+  replicas: 3
+  selector:
+    matchLabels:
+      app: t-back-end
