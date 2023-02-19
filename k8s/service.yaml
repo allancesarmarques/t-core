@@ -8,3 +8,4 @@ spec:
     app: t-back-end
   ports:
     - port: 8080
+      nodePort: 31762
