@@ -9,7 +9,7 @@ type Config struct {
 
 func New() *Config {
 	return &Config{
-		Port:    ":" + getenv("PORT", "8080"),
+		Port:    getenv("PORT", "8081"),
 		Version: getenv("VERSION", "1.0"),
 	}
 }

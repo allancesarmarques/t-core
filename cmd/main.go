@@ -18,8 +18,7 @@ func callback(context *gin.Context) {
 
 func main() {
   configuration := config.New()
-
 	router := gin.Default()
 	router.GET("/ping", callback)
-	router.Run(configuration.Port)
+	router.Run(":" + configuration.Port)
 }
