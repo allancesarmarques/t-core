@@ -1,4 +1,4 @@
-package config
+package configs
 
 import "os"
 
@@ -7,7 +7,7 @@ type Config struct {
 	Version string
 }
 
-func New() *Config {
+func Default() *Config {
 	return &Config{
 		Port:    getenv("PORT", "8081"),
 		Version: getenv("VERSION", "1.0"),

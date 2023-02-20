@@ -1,24 +1,15 @@
 package main
 
 import (
-	"t-back-end/config"
-
-	"github.com/gin-gonic/gin"
+	"t-back-end/configs"
+	"t-back-end/sources/routes"
 )
 
-type Body struct {
-  Message string `json:"message"`
-}
-
-func callback(context *gin.Context) {
-	context.JSON(200, &Body{
-    Message: "pong",
-  })
-}
-
 func main() {
-  configuration := config.New()
-	router := gin.Default()
-	router.GET("/ping", callback)
-	router.Run(":" + configuration.Port)
+  config := configs.Default()
+  router := routes.Default()
+
+	router.Middlewares()
+	router.V1()
+	router.Run(config.Port)
 }
