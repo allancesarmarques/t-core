@@ -5,8 +5,12 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type Cors struct {}
+type cors struct {}
 
-func (cors *Cors) Default() gin.HandlerFunc {
+func Cors() *cors {
+	return &cors{}
+}
+
+func (*cors) Default() gin.HandlerFunc {
 	return CORS.Default()
 }

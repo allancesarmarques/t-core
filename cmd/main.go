@@ -10,7 +10,7 @@ func main() {
   config := configs.Default()
   router := routes.Default()
 
-	cors := &middlewares.Cors{}
+	cors := middlewares.Cors()
 	auth := middlewares.Auth(config.MasterKey)
 
 	router.Middlewares(cors, auth)
