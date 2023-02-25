@@ -3,14 +3,16 @@ package configs
 import "os"
 
 type Config struct {
-	Port    string
-	Version string
+	Port      string
+	Version   string
+	MasterKey string
 }
 
 func Default() *Config {
 	return &Config{
-		Port:    getenv("PORT", "8081"),
-		Version: getenv("VERSION", "1.0"),
+		Port:      getenv("PORT", "8081"),
+		Version:   getenv("VERSION", "1.0"),
+		MasterKey: getenv("MASTER_KEY", "4114N"),
 	}
 }
 

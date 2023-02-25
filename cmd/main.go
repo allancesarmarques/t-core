@@ -11,8 +11,9 @@ func main() {
   router := routes.Default()
 
 	cors := &middlewares.Cors{}
+	auth := middlewares.Auth(config.MasterKey)
 
-	router.Middlewares(cors)
+	router.Middlewares(cors, auth)
 	router.V1()
 	router.Run(config.Port)
 }
