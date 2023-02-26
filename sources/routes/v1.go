@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"t-back-end/sources/controllers"
+	"t-core/sources/controllers"
 )
 
 func (router *Router) V1() {

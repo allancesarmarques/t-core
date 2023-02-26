@@ -1,9 +1,9 @@
 package main
 
 import (
-	"t-back-end/configs"
-	"t-back-end/sources/middlewares"
-	"t-back-end/sources/routes"
+	"t-core/configs"
+	"t-core/sources/middlewares"
+	"t-core/sources/routes"
 )
 
 func main() {

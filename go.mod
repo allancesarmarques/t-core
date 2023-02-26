@@ -1,4 +1,4 @@
-module t-back-end
+module t-core
 
 go 1.19
 
