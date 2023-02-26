@@ -1,0 +1,23 @@
+info:
+  contact: {}
+paths:
+  /v1/ping:
+    get:
+      consumes:
+      - application/json
+      description: do ping
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      summary: Ping Example
+      tags:
+      - example
+swagger: "2.0"

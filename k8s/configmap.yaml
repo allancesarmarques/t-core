@@ -5,3 +5,5 @@ metadata:
 data:
   PORT: "8080"
   VERSION: "1.0"
+  MASTER_KEY: "123456"
+  ALLOW_LIST: "*"

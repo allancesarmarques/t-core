@@ -3,7 +3,7 @@ package routes
 import "github.com/gin-gonic/gin"
 
 type Middleware interface {
-	Default() gin.HandlerFunc
+	Handler() gin.HandlerFunc
 }
 
 type Router struct {
@@ -11,12 +11,12 @@ type Router struct {
 }
 
 func Default() *Router {
-	return &Router{ gin.Default() }
+	return &Router{gin.Default()}
 }
 
 func (router *Router) Middlewares(middlewares ...Middleware) {
 	for _, middleware := range middlewares {
-		router.engine.Use(middleware.Default())
+		router.engine.Use(middleware.Handler())
 	}
 }
 
