@@ -21,13 +21,13 @@ you can run it every time you make any changes
 First step:
 
 ```sh
-docker build -t acmlira/t-core:{version} -f build/package/Dockerfile .
+docker build -t allancesarmarques/t-core:{version} -f build/package/Dockerfile .
 ```
 
 then, publish
 
 ```sh
-docker push acmlira/t-core:{version}
+docker push allancesarmarques/t-core:{version}
 ```
 
 finally, recycle k8s objects.

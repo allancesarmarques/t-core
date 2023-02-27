@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: t-core-container
-          image: acmlira/t-core:1.0
+          image: allancesarmarques/t-core:latest
           imagePullPolicy: "IfNotPresent"
           envFrom:
             - configMapRef:
