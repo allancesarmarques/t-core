@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: t-core-container
-          image: ghcr.io/acmlira/t-core:latest
+          image: acmlira/t-core:1.0
           imagePullPolicy: "IfNotPresent"
           envFrom:
             - configMapRef:
