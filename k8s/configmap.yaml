@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: configmap-t-core
+  namespace: t-project
 data:
   PORT: "8080"
   VERSION: "1.0"
