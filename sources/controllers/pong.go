@@ -1,10 +1,10 @@
 package controllers
 
-import "github.com/gin-gonic/gin"
+import (
+	"t-core/sources/models"
 
-type body struct {
-	Message string `json:"message"`
-}
+	"github.com/gin-gonic/gin"
+)
 
 // Ping Example
 // @Summary Ping Example
@@ -17,7 +17,7 @@ type body struct {
 // @Failure 400 {string} models.Error
 // @Router /v1/ping [get]
 func Pong(context *gin.Context) {
-	context.JSON(200, &body{
+	context.JSON(200, &models.Body{
 		Message: "pong",
 	})
 }

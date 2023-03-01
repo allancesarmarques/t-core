@@ -14,7 +14,7 @@ type config struct {
 
 func Default() *config {
 	return &config{
-		port:      getEnvWithFallback("PORT", "8081"),
+		port:      getEnvWithFallback("PORT", "8082"),
 		version:   getEnvWithFallback("VERSION", "1.0"),
 		masterKey: getEnv("MASTER_KEY"),
 		allowList: getEnvAsListWithFallback("ALLOW_LIST", "*"),
