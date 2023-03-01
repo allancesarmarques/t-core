@@ -17,8 +17,12 @@ func Default() *config {
 		port:      getEnvWithFallback("PORT", "8081"),
 		version:   getEnvWithFallback("VERSION", "1.0"),
 		masterKey: getEnv("MASTER_KEY"),
-		allowList: getEnvAsList("ALLOW_LIST"),
+		allowList: getEnvAsListWithFallback("ALLOW_LIST", "*"),
 	}
+}
+
+func getEnv(key string) string {
+	return os.Getenv(key)
 }
 
 func getEnvWithFallback(key string, fallback string) string {
@@ -29,12 +33,16 @@ func getEnvWithFallback(key string, fallback string) string {
 	return value
 }
 
-func getEnv(key string) string {
-	return os.Getenv(key)
-}
-
 func getEnvAsList(key string) []string {
 	return strings.Split(getEnv(key), ",")
+}
+
+func getEnvAsListWithFallback(key string, fallback string) []string {
+	value := getEnvAsList(key)
+	if len(value) <= 1 {
+		return []string{ fallback }
+	}
+	return value
 }
 
 func (_config *config) GetPort() string {
