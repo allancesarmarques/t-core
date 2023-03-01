@@ -18,7 +18,6 @@ func main() {
 	router.Middlewares(cors, auth)
 	router.V1()
 	router.Swagger()
-	router.Metrics()
 
 	go router.Run(config.GetPort())
 

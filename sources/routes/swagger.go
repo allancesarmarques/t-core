@@ -10,7 +10,7 @@ import (
 // @Version 1.0
 // @Description t-core API
 func (router *Router) Swagger() {
-	group := router.engine.Group("/swagger")
+	group := router.Engine.Group("/swagger")
 
 	group.GET("/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 }

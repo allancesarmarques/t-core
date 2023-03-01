@@ -13,7 +13,7 @@ spec:
       containers:
         - name: t-core-container
           image: allancesarmarques/t-core:latest
-          imagePullPolicy: "IfNotPresent"
+          imagePullPolicy: "Always"
           envFrom:
             - configMapRef:
                 name: configmap-t-core

@@ -7,7 +7,7 @@ type Middleware interface {
 }
 
 type Router struct {
-	engine *gin.Engine
+	Engine *gin.Engine
 }
 
 func Default() *Router {
@@ -16,10 +16,10 @@ func Default() *Router {
 
 func (router *Router) Middlewares(middlewares ...Middleware) {
 	for _, middleware := range middlewares {
-		router.engine.Use(middleware.Handler())
+		router.Engine.Use(middleware.Handler())
 	}
 }
 
 func (router *Router) Run(port string) {
-	router.engine.Run(":" + port)
+	router.Engine.Run(":" + port)
 }
